@@ -15,7 +15,7 @@ Frontend implementation with pyscript
 Clone the project
 
 ```bash
-  git clone git@bitbucket.org:spianopolese/drupy-frontend.git
+  git clone https://github.com/Spianopolese/webpyux.git
 ```
 
 Go to the project directory

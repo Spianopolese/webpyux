@@ -1,0 +1,67 @@
+$header: 40px;
+$footer: 80px;
+
+body {
+  margin: 0;
+  font-family: $font-family-sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: $header calc(100vh - (#{$header} + #{$footer})) $footer;
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "footer footer footer footer";
+  justify-items: stretch;
+  background-color: #e0e0d8
+}
+
+header {
+  grid-area: header;
+}
+.main {
+  grid-area: main;
+  display: grid;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-template-rows: auto auto;
+  grid-template-areas:
+    "sidebar result result result"
+    "info result result result"
+}
+#result, #list-view, #app-info {
+  background-color: $white;
+  resize: both;
+  border: 1px solid  #e0e0d8;
+}
+#app-info {
+  grid-area: info;
+}
+
+#result {
+  overflow: auto;
+  grid-area: result;
+  display: flex;
+  justify-content: center;
+  min-height: 450px;
+}
+
+#list-view {
+  grid-area: sidebar;
+}
+
+footer {
+  grid-area: footer;
+}
+
+py-config {
+  display: none;
+}
+img {
+  width: 100%;
+}
+.disabled {
+  cursor: not-allowed !important;
+}

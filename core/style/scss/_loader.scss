@@ -1,0 +1,74 @@
+#loader-wrapper, .py-pop-up{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 99999;
+
+  .loader, #pyscript-loading-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 4px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, $baby-blue, $dark-blue);
+    animation: loader 2s infinite ease;
+
+    .loader-inner, #pyscript-operation-details {
+      vertical-align: top;
+      display: inline-block;
+      width: 100%;
+      background: linear-gradient(to top, $baby-blue, $midnight-blue);
+      animation: loader-inner 2s infinite ease-in;
+      p {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}

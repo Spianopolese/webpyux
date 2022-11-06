@@ -1,0 +1,51 @@
+#list-view {
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+  overflow: auto;
+  li {
+    animation: append-animate .3s linear;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      strong {
+        display: flex;
+        flex-direction: column;
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+    i {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+    i:before {
+      width: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    a[data-class="chart"] i:before {
+        @include fontAwesome;
+       content: "\f200";
+    }
+    a[data-class="text"] i:before {
+        @include fontAwesome;
+       content: "\f15c";
+    }
+    a[data-class="websocket"] i:before {
+        @include fontAwesome;
+       content: "\f544";
+    }
+  }
+}

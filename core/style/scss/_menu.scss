@@ -1,0 +1,128 @@
+#menu {
+  width: 100%;
+  border-bottom: 1px solid #aaa;
+  box-shadow: -2px 1px 3px 1px rgb(0 0 0 / 33%);
+  display: block;
+  height: 100%;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: $white;
+
+    li {
+      position: relative;
+    }
+
+    a {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  > ul {
+    display: flex;
+    height: 100%;
+
+    > li {
+      position: relative;
+      display: block;
+      width: auto;
+      line-height: 1em;
+      border-right: 1px solid #ddd;
+
+      &:hover > ul {
+        display: flex;
+      }
+
+      &:first-child {
+        background-color: #f5f5f2;
+      }
+
+      a {
+        display: block;
+        padding: 1em 1.3333em;
+        cursor: pointer;
+        text-decoration: none;
+        color: #565656;
+        font-size: 13px;
+
+        span {
+          padding-left: 1em;
+        }
+      }
+
+      > ul {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: calc(#{$header} - 1px);
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        background-color: $white;
+        height: auto;
+        min-width: 100%;
+        box-shadow: 2px 2px 3px hsl(0deg 0% 0% / 40%);
+        z-index: 1;
+
+        ul {
+          display: none;
+        }
+
+        li {
+          border-top: 1px solid #ddd;
+
+          &:hover > ul {
+            display: flex;
+            flex-direction: column;
+
+            ul {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+
+          > ul {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            min-width: 150px;
+            box-shadow: 2px 2px 3px hsl(0deg 0% 0% / 40%);
+            z-index: 1;
+
+            ul {
+              border-bottom: 1px solid #565656;
+
+              &:last-of-type {
+                border-bottom: 0;
+              }
+            }
+
+
+            span {
+              padding: 1em 1.3333em;
+              font-weight: 600;
+              font-size: 13px;
+            }
+
+          }
+
+          a {
+            display: flex;
+            align-items: center;
+
+            i {
+              padding-left: 1em;
+              color: #0074bd;
+            }
+          }
+        }
+      }
+    }
+  }
+}

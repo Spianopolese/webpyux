@@ -3,11 +3,12 @@
 
 Frontend implementation with pyscript
 
+The manual in Italian is available [here](https://www.docdroid.net/q7KyBuW/webpyux-ita-pdf)
 
 
 ## Authors
 
-- [@spianopolese](https://bitbucket.org/spianopolese)
+- [@spianopolese](https://github.com/Spianopolese)
 
 
 ## Run Locally

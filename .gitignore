@@ -1,5 +1,5 @@
- /.idea/
- /.DS_Store/
- config.ini
- index.html
- login.html
+config.ini
+index.html
+login.html
+.idea/
+.DS_Store

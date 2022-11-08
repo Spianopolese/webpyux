@@ -18,14 +18,14 @@ Clone the project
 ```bash
   git clone https://github.com/Spianopolese/webpyux.git
 ```
-
-Go to the project directory
+Copy STARTER (core/STARTER) into project root and rename to app
 
 ```bash
-  cd webpyux
+  cd app
 ```
 
 Run python server
+
 See the issue [@here](https://stackoverflow.com/questions/72122355/pyscript-how-can-i-fix-the-jsexceptiontypeerror-failed-to-fetch-error-when)
 
 ```bash
@@ -35,5 +35,7 @@ See the issue [@here](https://stackoverflow.com/questions/72122355/pyscript-how-
 Go to
 
 ```bash
-  http://localhost:8000/index.html
+  http://localhost:8000/app/index.html
 ```
+
+Note: you need to implement the REST api as described in the manual before you can use the framework

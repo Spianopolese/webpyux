@@ -21,7 +21,7 @@ Clone the project
 Copy STARTER (core/STARTER) into project root and rename to app
 
 ```bash
-  cd app
+  cd webpyux
 ```
 
 Run python server

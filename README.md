@@ -1,5 +1,5 @@
 
-# Drupy Frontend
+# Webpyux Frontend
 
 Frontend implementation with pyscript
 

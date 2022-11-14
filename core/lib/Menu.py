@@ -11,14 +11,16 @@ class Menu(ElementInterface):
         self.menu = js.document.getElementById(menu)
 
     async def proxy_js_to_pyscpript(self, event) -> None:
-        await self.mediator.notify(self, "data", event.srcElement)
+        await self.mediator.notify(self, 'data', event.srcElement)
 
-    def generateHTML(self, element, label='', rest_url='', type='', last=False) -> None:
+    def generateHTML(self, element, label='', rest_url='', widget_class='', type='', last=False) -> None:
         item = js.document.createElement(element)
         if element == 'li':
             anchor = js.document.createElement('a')
-            if rest_url != "":
-                anchor.setAttribute('data-type', type)
+            if rest_url != '':
+                anchor.setAttribute('data-widget_class', widget_class)
+                if len(type) > 0:
+                    anchor.setAttribute('data-type', type)
                 anchor.setAttribute('data-rest', rest_url)
             if last:
                 icon = js.document.createElement('i')
@@ -52,12 +54,15 @@ class Menu(ElementInterface):
                     parent.append(item)
                     sub_menu = self.generateHTML('ul', '')
                     for val in value['widgets']:
-                        widget = self.generateHTML('li', val['label'], val['url'], val['class'])
+                        widget_type = val['type'] if 'type' in val else ''
+                        widget = self.generateHTML('li', val['label'], val['url'], val['class'], widget_type)
                         sub_menu.append(widget)
                     parent.append(sub_menu)
                 else:
                     if 'url' in value:
-                        simple_element = self.generateHTML('li', value['label'], value['url'], value['class'])
+                        widget_type = value['type'] if 'type' in value else ''
+                        simple_element = self.generateHTML('li', value['label'], value['url'], value['class'],
+                                                           widget_type)
                         parent.append(simple_element)
 
     def render(self) -> None:

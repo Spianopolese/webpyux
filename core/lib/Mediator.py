@@ -6,7 +6,6 @@ from AppInfo import AppInfo
 from Connector import Connector
 import configparser
 
-
 class Mediator(MediatorInterface):
     def __init__(self, menu: Menu, list_view: ListView, result: Result, app_info: AppInfo) -> None:
         self._menu = menu
@@ -25,7 +24,11 @@ class Mediator(MediatorInterface):
     async def notify(self, sender: object, event: str, src_element) -> None:
         if event == "data":
             data = await self.getData(src_element.dataset.rest)
-            self._list.update(data, src_element.dataset.type, src_element.dataset.rest, data['list_view_dataset'],
+            widget_type = src_element.dataset.type if hasattr(src_element.dataset, 'type') else ''
+            self._list.update(src_element.dataset.widget_class,
+                              widget_type,
+                              src_element.dataset.rest,
+                              data['list_view_dataset'],
                               data['list_view_label'])
-            self._result.update(data, src_element.dataset.type)
+            self._result.update(data, src_element.dataset.widget_class, widget_type)
             self._app_info.update(str(data['list_view_dataset']), data['size'])

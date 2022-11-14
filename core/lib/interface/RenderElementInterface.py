@@ -5,5 +5,5 @@ from abc import ABC, abstractmethod
 class RenderElementInterface(ABC):
 
     @abstractmethod
-    def render(self, data, type) -> None:
+    def render(self, data, widget_class, type) -> None:
         pass

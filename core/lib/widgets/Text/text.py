@@ -4,9 +4,9 @@ import configparser
 
 
 class text(RenderElementInterface):
-    def __init__(self, data, category, type):
+    def __init__(self, data, widget_class, type):
         self._data = data
-        self._category = category
+        self._widget_class = widget_class
         self._type = type
 
     def render(self) -> None:
@@ -15,14 +15,14 @@ class text(RenderElementInterface):
 
         data = self._data
         wrapper = js.document.createElement('div')
-        wrapper.setAttribute('id', self._type)
+        wrapper.setAttribute('id', self._widget_class)
         title = js.document.createElement('h3')
         title.innerText = data['label']
         wrapper.appendChild(title)
 
         body = js.document.createElement('div')
         body.setAttribute('class', 'text-container')
-        if self._category == 'two_column':
+        if self._type == 'two_column':
             body.setAttribute('class', 'two-column')
         body.innerHTML = data['body']
 

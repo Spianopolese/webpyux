@@ -7,9 +7,9 @@ import json
 
 
 class websocket(RenderElementInterface):
-    def __init__(self, data, type, category):
+    def __init__(self, data, widget_class, type):
         self._data = data
-        self._category = category
+        self._widget_class = widget_class
         self._type = type
 
     def render(self) -> None:

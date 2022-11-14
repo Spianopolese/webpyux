@@ -509,7 +509,7 @@ footer #user #logout:before {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#list-view li a[data-class=chart] i:before {
+#list-view li a[data-widget_class=chart] i:before {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -520,7 +520,7 @@ footer #user #logout:before {
   color: #0074bd;
   content: "\f200";
 }
-#list-view li a[data-class=text] i:before {
+#list-view li a[data-widget_class=text] i:before {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -531,7 +531,7 @@ footer #user #logout:before {
   color: #0074bd;
   content: "\f15c";
 }
-#list-view li a[data-class=websocket] i:before {
+#list-view li a[data-widget_class=websocket] i:before {
   display: inline-block;
   font-style: normal;
   font-variant: normal;

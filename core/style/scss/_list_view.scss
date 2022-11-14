@@ -35,15 +35,15 @@
       left: 50%;
       transform: translate(-50%,-50%);
     }
-    a[data-class="chart"] i:before {
+    a[data-widget_class="chart"] i:before {
         @include fontAwesome;
        content: "\f200";
     }
-    a[data-class="text"] i:before {
+    a[data-widget_class="text"] i:before {
         @include fontAwesome;
        content: "\f15c";
     }
-    a[data-class="websocket"] i:before {
+    a[data-widget_class="websocket"] i:before {
         @include fontAwesome;
        content: "\f544";
     }
